@@ -1,0 +1,45 @@
+class Mercado {
+    constructor(funcionario) {
+        this.funcionario = funcionario;
+    }
+
+    cumprimentar() {
+        return `Olá, eu sou a funcionária ${this.funcionario}.`;
+    }
+}
+
+class FuncioUm extends Mercado {
+    constructor(conversa, funcionario) {
+        super(funcionario);
+        this.conversa = conversa;
+    }
+
+    iniciarConversa() {
+        return `Cliente inicia uma conversa com a funcionária... conversa...`;
+    }
+}
+
+class FuncioDois extends Mercado {
+    constructor(conversa, funcionario) {
+        super(funcionario);
+        this.conversa = conversa;
+    }
+
+    cumprimentarCliente() {
+        return `Funcionário cumprimenta o cliente... conversa...`;
+    }
+}
+
+const mercado = [
+    new FuncioUm("Olá, bom dia", "Maria"),
+    new FuncioDois("Olá", "Mario")
+];
+
+for (const funcionaria of mercado) {
+    console.log(funcionaria.cumprimentar());
+}
+
+for (const funcionaria of mercado) {
+   console.log(funcionaria.iniciarConversa());
+}
+
